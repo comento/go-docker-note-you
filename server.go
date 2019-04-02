@@ -13,6 +13,9 @@ import (
 func main() {
 	e := echo.New()
 
+	// Static Files
+	e.Static("/public", "public")
+
 	// Define the HTTP routes
 	e.File("/", "public/index.html")
 	e.PUT("/note", func(c echo.Context) error {
