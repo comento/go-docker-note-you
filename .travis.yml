@@ -1,4 +1,22 @@
 language: go
 
 go:
-- 1.12.x
+  - 1.12.x
+
+sudo: required
+
+services:
+  - docker
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: Qr6C3/oA7XR7ggVSD81Eq+HpS7SBkxifUbUK9xvTiguHVlaBB7MjVEDLffreXSALdUn61UbLtGzl3PuTnBOuwHAcTk6a3DrvleBhAmMTEJbjRoD/wWC6MX0nVz2dHIex2n+aupUjKBb6NvYc9p62R1PTAP3uSV5+3dNRO/c361GNF3SZQJ4/tV8UXKEhaoHBRjU1daalI8K1hT15QNKzU4Dm1h5/k/ADmU9FHm3J2+Znsml/qB7nYL7Mv6tvm2AnbrJWXNyfcQPf11wTBpexW0aXG2E8cFHjw2I1LG1zcfDgzHpfqoMxSY5TKmA/E9D2YJ1M8nQJMf8+1NshrxFdVWJDymq2E2jaOa8TdjZ6M9pMViupth402ehM/B1GgjPsRB/IEUNByvxBIboG0piZXMPceTvrEb9H9/BX12bngj7KLe3llfqQvZSKIcrpXvrR9Tps/PR08SINrFz+qSlMirSwtsra8JMJajhB4RakNKQY5V0YzHTvWtuiHTAhLSFIKkJd1iczRJGBol/xoM5uP33E68oLvTQoq17GHq+GSCtq63F13CLngeKuecyJI3X+9WkK8CxjryilYcShz0/8QQMFtUrIeLTCgBc7GeSNkvNY6D7DpZBkRcH91v4cTS+w+gwM/ks1K58Ygx+Qar8qS1JX8itaezj9N9RVbIjDn84=
+  secret_access_key:
+    secure: E1IA3JZmxvHKieXGsVwaLpYpW9RRx+QI8U4oq5eyunirQimzZ9JEOpdHry51b9tdWP+RO8AwceCdkL8FJN+klCCj+iG/KVQZAjyiFGwhAqtCz5kJjdCuZ5SQugBjXekwz453goClYWnWzSqWZ+SQSlzeLEBGHotLdkyn7degzd3f8iVt3hqgsOsPBmqI50f8rSCvI0UfC8jDtzxlFbS/phL/jOB+BfA8UL6kvvD4MSKXWKxJbeBM57owN4/dJg3UFPiM8YCxaw/Fn392S7p55C7Hnw1iW/tRRT1SM6SgG8XsI7y4ds6nZgRtuaaoCs90FHo8l81NVqKmGe2LazwHXL+Q0DklNrps+GoyCzX1uq4LeJpStx9TjLnANKPzTk2PvSxrpVqjha/VwweJR6rdRwGRk+B351nNK3uf2Pd5hJQWpeBnO7YQADwcxrmHsvzrAHxB+0K/ECUPJNqdTLsbV+ax56ruWmTnkTex1E8IQpSpj85wUdWH+yZDGe4Qy36N0kiyHeJMruHYgmV4rOoC/5IWM1xojoId00BENqXtoENI2lzBl2QvyWpZqaX9A4V2/SZUcHVLsZ9iRbG1H7/JLU0IyPnImAMkHZgi3Maop3L1dNx0/K/6TtoGUgT/eRG9BKaashRIj35HNBVBnXm1KGDwC1BzJlQniOZh1jbcBTc=
+  region: ap-northeast-2
+  app: docker-go-note-you
+  env: DockerGoNoteYou-env
+  bucket_name: elasticbeanstalk-ap-northeast-2-744549229387
+  on:
+    branch: master
